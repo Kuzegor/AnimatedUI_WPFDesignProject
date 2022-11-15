@@ -1,0 +1,28 @@
+﻿<Application x:Class="AnimatedUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AnimatedUI"
+             xmlns:viewmodels="clr-namespace:AnimatedUI.ViewModels"
+             xmlns:views="clr-namespace:AnimatedUI.Views"
+             StartupUri="Views/MainWindowView.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/RightPanelButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/MenuButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/MenuStripButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <FontFamily x:Key="RussoOne">Fonts/#Russo One</FontFamily>
+
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:AccountViewModel}">
+                <views:AccountView/>
+            </DataTemplate>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,114 @@
+﻿<Window x:Class="AnimatedUI.Views.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimatedUI.Views"
+        xmlns:views="clr-namespace:AnimatedUI.Views"
+        xmlns:viewmodels="clr-namespace:AnimatedUI.ViewModels"
+        mc:Ignorable="d"
+        Height="650" 
+        Width="1000"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewmodels:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+
+        <Storyboard x:Key="PanelsOut">
+            <DoubleAnimation Storyboard.TargetName="CurrentViewContainer"
+                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                             From="0"
+                             To="{Binding ActualHeight, ElementName=MainWindowMainGrid}"
+                             Duration="0:0:.70"
+                             FillBehavior="Stop"/>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CurrentViewContainer"
+                                           Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0:0:.69"
+                                        Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:.71"
+                                        Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+    </Window.Resources>
+    
+    <Grid x:Name="MainWindowMainGrid">
+        
+        <!--Background-->
+        <Border Background="#252525" 
+                Panel.ZIndex="0">
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftClick"
+                              Command="{Binding DragMoveCommand}"/>
+            </Border.InputBindings>
+        </Border>
+
+        <!--Upper Green Line-->
+        <Border x:Name="UpperGreenLine"
+                BorderBrush="#FF31FF00" 
+                Panel.ZIndex="3" 
+                BorderThickness="0,6,0,0">
+            <Border.RenderTransform>
+                <TranslateTransform X="-1000"/>
+            </Border.RenderTransform>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Border.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="UpperGreenLine"
+                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                         To="0"
+                                         BeginTime="0:0:0"
+                                         Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+        </Border>
+
+        <!--Lower Green Line-->
+        <Border x:Name="LowerGreenLine"
+                BorderBrush="#FF31FF00"
+                Panel.ZIndex="3"
+                BorderThickness="0,0,0,6">
+            <Border.RenderTransform>
+                <TranslateTransform X="1000"/>
+            </Border.RenderTransform>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Border.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="LowerGreenLine"
+                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                         To="0"
+                                         BeginTime="0:0:0.5"
+                                         Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+        </Border>
+
+        <!--Upper And Lower Edges-->
+        <Border BorderBrush="#252525" 
+                Panel.ZIndex="4" 
+                BorderThickness="0,3,0,3"/>
+
+        <views:MainMenuView Panel.ZIndex="2"
+                            x:Name="MainMenu"/>
+
+        <ContentControl Content="{Binding MenuStrip.CurrentViewModel, UpdateSourceTrigger=PropertyChanged}"
+                        Panel.ZIndex="1"
+                        x:Name="CurrentViewContainer">
+            <ContentControl.RenderTransform>
+                <TranslateTransform Y="0"/>
+            </ContentControl.RenderTransform>
+        </ContentControl>
+    </Grid>
+</Window>

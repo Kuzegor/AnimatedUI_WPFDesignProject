@@ -24,11 +24,13 @@ namespace AnimatedUI.ViewModels
 
         private HomeViewModel HomeViewModel { get; set; }
         private AccountViewModel AccountViewModel { get; set; }
+        private SettingsViewModel SettingsViewModel { get; set; }
 
         public MenuStripViewModel()
         {
             HomeViewModel = new HomeViewModel();
             AccountViewModel = new AccountViewModel();
+            SettingsViewModel = new SettingsViewModel();
             CurrentViewModel = HomeViewModel;
 
             ShowHomeViewCommand = new DelegateCommand(x => 
@@ -49,9 +51,19 @@ namespace AnimatedUI.ViewModels
                 }));
                 thread.Start();
             });
+            ShowSettingsViewCommand = new DelegateCommand(x =>
+            {
+                Thread thread = new Thread(new ThreadStart(() =>
+                {
+                    Thread.Sleep(700);
+                    Instance.CurrentViewModel = SettingsViewModel;
+                }));
+                thread.Start();
+            });
         }
 
         public DelegateCommand ShowHomeViewCommand { get; set; }
         public DelegateCommand ShowAccountViewCommand { get; set; }
+        public DelegateCommand ShowSettingsViewCommand { get; set; }
     }
 }

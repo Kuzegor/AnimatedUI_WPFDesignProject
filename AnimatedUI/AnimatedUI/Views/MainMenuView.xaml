@@ -234,7 +234,8 @@
             <Border x:Name="LowerPanelBorder"
                     Background="#454545"
                     CornerRadius="5">
-                <Border Background="Transparent"
+                <Border x:Name="ClippingBorder"
+                        Background="Transparent"
                         BorderBrush="#31FF00"
                         BorderThickness="3,0"
                         Margin="20"
@@ -252,7 +253,7 @@
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                             </TextBlock.Text>
                             <TextBlock.RenderTransform>
-                                <TranslateTransform X="820"/>
+                                <TranslateTransform X="{Binding ActualWidth, ElementName=ClippingBorder}"/>
                             </TextBlock.RenderTransform>
                         </TextBlock>
 

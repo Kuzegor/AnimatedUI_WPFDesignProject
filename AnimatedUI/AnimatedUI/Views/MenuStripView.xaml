@@ -55,7 +55,8 @@
             <RadioButton Style="{StaticResource MenuStripButtonStyle}"
                          Content="⚙️" Grid.Column="6"
                          x:Name="SettingsRadio"
-                         Unchecked="Radio_Unchecked"/>
+                         Unchecked="Radio_Unchecked"
+                         Command="{Binding ShowSettingsViewCommand}"/>
 
             <Popup IsOpen="{Binding ElementName=HomeRadio, Path=IsMouseOver, Mode=OneWay}"
                    PlacementTarget="{Binding ElementName=HomeRadio}"

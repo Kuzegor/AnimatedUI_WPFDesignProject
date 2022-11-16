@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:AnimatedUI.Views"
              mc:Ignorable="d" 
              d:DesignHeight="864" d:DesignWidth="1536">
-    <Grid>
+    
+    <Grid x:Name="HomeMainGrid">
         
         <Grid.Triggers>
             <EventTrigger RoutedEvent="Grid.Loaded">
@@ -188,7 +189,7 @@
                         BorderBrush="#FF31FF00"
                         BorderThickness="3,0">
                     <Border.RenderTransform>
-                        <TranslateTransform X="1300"/>
+                        <TranslateTransform X="{Binding ActualWidth, ElementName=HomeMainGrid}"/>
                     </Border.RenderTransform>
                 </Border>
             </Grid>
@@ -229,7 +230,8 @@
                             BorderBrush="#FF31FF00"
                             BorderThickness="0,3,0,0">
                         <Border.RenderTransform>
-                            <TranslateTransform Y="-800"/>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=HomeMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
                         </Border.RenderTransform>
                     </Border>
 
@@ -242,7 +244,8 @@
                             BorderBrush="#FF31FF00"
                             BorderThickness="0,3,0,0">
                         <Border.RenderTransform>
-                            <TranslateTransform Y="-800"/>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=HomeMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
                         </Border.RenderTransform>
                     </Border>
 
@@ -254,7 +257,8 @@
                             BorderBrush="#FF31FF00"
                             BorderThickness="0,3,0,0">
                         <Border.RenderTransform>
-                            <TranslateTransform Y="-800"/>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=HomeMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
                         </Border.RenderTransform>
                     </Border>
 
@@ -266,7 +270,8 @@
                             BorderBrush="#FF31FF00"
                             BorderThickness="0,3,0,0">
                         <Border.RenderTransform>
-                            <TranslateTransform Y="-800"/>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=HomeMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
                         </Border.RenderTransform>
                     </Border>
 
@@ -279,7 +284,8 @@
                             BorderBrush="#FF31FF00"
                             BorderThickness="0,3,0,0">
                         <Border.RenderTransform>
-                            <TranslateTransform Y="-800"/>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=HomeMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
                         </Border.RenderTransform>
                     </Border>
 
@@ -292,7 +298,8 @@
                             BorderBrush="#FF31FF00"
                             BorderThickness="0,3,0,0">
                         <Border.RenderTransform>
-                            <TranslateTransform Y="-800"/>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=HomeMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
                         </Border.RenderTransform>
                     </Border>
                 </Grid>

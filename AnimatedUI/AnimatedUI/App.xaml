@@ -13,6 +13,8 @@
                 <ResourceDictionary Source="Styles/MenuStripButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            <local:PositiveToNegativeConverter x:Key="PositiveToNegativeConverter"/>
+
             <FontFamily x:Key="RussoOne">Fonts/#Russo One</FontFamily>
 
             <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
@@ -22,7 +24,7 @@
             <DataTemplate DataType="{x:Type viewmodels:AccountViewModel}">
                 <views:AccountView/>
             </DataTemplate>
-            
+          
         </ResourceDictionary>
     </Application.Resources>
 </Application>

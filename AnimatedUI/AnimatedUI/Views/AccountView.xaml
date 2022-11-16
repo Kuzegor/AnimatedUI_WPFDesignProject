@@ -185,7 +185,8 @@
                     BorderBrush="#FF31FF00"
                     BorderThickness="0,0,3,0">
                 <Border.RenderTransform>
-                    <TranslateTransform Y="-800"/>
+                    <TranslateTransform Y="{Binding ActualHeight, ElementName=AccountMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
                 </Border.RenderTransform>
             </Border>
         </Grid>
@@ -200,7 +201,8 @@
                     BorderBrush="#FF31FF00"
                     BorderThickness="0,0,3,0">
                 <Border.RenderTransform>
-                    <TranslateTransform Y="-800"/>
+                    <TranslateTransform Y="{Binding ActualHeight, ElementName=AccountMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
                 </Border.RenderTransform>
             </Border>
         </Grid>
@@ -223,7 +225,7 @@
                     Grid.Row="0"
                     Margin="0,0,0,8">
                 <Border.RenderTransform>
-                    <TranslateTransform X="660"/>
+                    <TranslateTransform X="{Binding ActualWidth, ElementName=AccountMainGrid}"/>
                 </Border.RenderTransform>
             </Border>
             
@@ -235,7 +237,7 @@
                     Grid.Row="1"
                     Margin="0,0,0,8">
                 <Border.RenderTransform>
-                    <TranslateTransform X="660"/>
+                    <TranslateTransform X="{Binding ActualWidth, ElementName=AccountMainGrid}"/>
                 </Border.RenderTransform>
             </Border>
             
@@ -247,7 +249,7 @@
                     Grid.Row="2"
                     Margin="0,0,0,4">
                 <Border.RenderTransform>
-                    <TranslateTransform X="660"/>
+                    <TranslateTransform X="{Binding ActualWidth, ElementName=AccountMainGrid}"/>
                 </Border.RenderTransform>
             </Border>
             
@@ -259,7 +261,7 @@
                     Grid.Row="3"
                     Margin="0,4,0,0">
                 <Border.RenderTransform>
-                    <TranslateTransform X="660"/>
+                    <TranslateTransform X="{Binding ActualWidth, ElementName=AccountMainGrid}"/>
                 </Border.RenderTransform>
             </Border>
             
@@ -271,7 +273,7 @@
                     Grid.Row="4"
                     Margin="0,8,0,0">
                 <Border.RenderTransform>
-                    <TranslateTransform X="660"/>
+                    <TranslateTransform X="{Binding ActualWidth, ElementName=AccountMainGrid}"/>
                 </Border.RenderTransform>
             </Border>
             
@@ -283,7 +285,7 @@
                     Grid.Row="5"
                     Margin="0,8,0,0">
                 <Border.RenderTransform>
-                    <TranslateTransform X="660"/>
+                    <TranslateTransform X="{Binding ActualWidth, ElementName=AccountMainGrid}"/>
                 </Border.RenderTransform>
             </Border>
         </Grid>

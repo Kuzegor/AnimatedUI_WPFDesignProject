@@ -34,19 +34,23 @@
             <RadioButton Style="{StaticResource MenuStripButtonStyle}"
                          Content="📧" Grid.Column="1"
                          x:Name="MailRadio"
-                         Unchecked="Radio_Unchecked"/>
+                         Unchecked="Radio_Unchecked"
+                         Command="{Binding ShowMailViewCommand}"/>
             <RadioButton Style="{StaticResource MenuStripButtonStyle}"
                          Content="📈" Grid.Column="2"
                          x:Name="StatisticRadio"
-                         Unchecked="Radio_Unchecked"/>
+                         Unchecked="Radio_Unchecked"
+                         Command="{Binding ShowStatisticViewCommand}"/>
             <RadioButton Style="{StaticResource MenuStripButtonStyle}"
                          Content="ℹ️" Grid.Column="3"
                          x:Name="InfoRadio"
-                         Unchecked="Radio_Unchecked"/>
+                         Unchecked="Radio_Unchecked"
+                         Command="{Binding ShowInfoViewCommand}"/>
             <RadioButton Style="{StaticResource MenuStripButtonStyle}"
                          Content="🏷️" Grid.Column="4"
                          x:Name="OffersRadio"
-                         Unchecked="Radio_Unchecked"/>
+                         Unchecked="Radio_Unchecked"
+                         Command="{Binding ShowOffersViewCommand}"/>
             <RadioButton Style="{StaticResource MenuStripButtonStyle}"
                          Content="👤" Grid.Column="5"
                          x:Name="AccountRadio"

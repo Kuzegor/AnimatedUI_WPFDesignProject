@@ -93,7 +93,8 @@
                     CornerRadius="0"
                     Panel.ZIndex="1"
                     Width="60"
-                    HorizontalAlignment="Left"/>
+                    HorizontalAlignment="Left"
+                    x:Name="HidingBorder"/>
 
             <Border x:Name="MenuStripBorder"
                     Background="#454545"

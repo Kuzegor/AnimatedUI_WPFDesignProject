@@ -24,7 +24,7 @@
             <DoubleAnimation Storyboard.TargetName="CurrentViewContainer"
                              Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
                              From="0"
-                             To="{Binding ActualHeight, ElementName=MainWindowMainGrid}"
+                             To="{Binding ElementName=MainWindowMainGrid, Path=ActualHeight}"
                              Duration="0:0:.70"
                              FillBehavior="Stop"/>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CurrentViewContainer"

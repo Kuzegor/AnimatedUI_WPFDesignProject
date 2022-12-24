@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:AnimatedUI.Views"
              mc:Ignorable="d" 
              d:DesignHeight="864" d:DesignWidth="1536">
-    <Grid>
 
+    <Grid x:Name="StatisticMainGrid">
 
         <Grid.Triggers>
             <EventTrigger RoutedEvent="Grid.Loaded">
@@ -17,6 +17,51 @@
                                              Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
                                              To="0"
                                              Duration="0:0:.25"/>
+                        <DoubleAnimation Storyboard.TargetName="border1"
+                                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                             To="0"
+                                             Duration="0:0:.25"
+                                                 BeginTime="0:0:.2"/>
+                        <DoubleAnimation Storyboard.TargetName="border9"
+                                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                             To="0"
+                                             Duration="0:0:.25"
+                                                 BeginTime="0:0:1"/>
+                        <DoubleAnimation Storyboard.TargetName="border8"
+                                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                             To="0"
+                                             Duration="0:0:.25"
+                                                 BeginTime="0:0:.9"/>
+                        <DoubleAnimation Storyboard.TargetName="border5"
+                                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                             To="0"
+                                             Duration="0:0:.25"
+                                                 BeginTime="0:0:.8"/>
+                        <DoubleAnimation Storyboard.TargetName="border6"
+                                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                             To="0"
+                                             Duration="0:0:.25"
+                                                 BeginTime="0:0:.7"/>
+                        <DoubleAnimation Storyboard.TargetName="border7"
+                                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                             To="0"
+                                             Duration="0:0:.25"
+                                                 BeginTime="0:0:.6"/>
+                        <DoubleAnimation Storyboard.TargetName="border2"
+                                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                             To="0"
+                                             Duration="0:0:.25"
+                                                 BeginTime="0:0:.3"/>
+                        <DoubleAnimation Storyboard.TargetName="border3"
+                                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                             To="0"
+                                             Duration="0:0:.25"
+                                                 BeginTime="0:0:.4"/>
+                        <DoubleAnimation Storyboard.TargetName="border4"
+                                             Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                             To="0"
+                                             Duration="0:0:.25"
+                                                 BeginTime="0:0:.5"/>
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>
@@ -111,6 +156,154 @@
                     </EventTrigger>
                 </Border.Triggers>
             </Border>
+        </Grid>
+
+        <!--Blank Panels-->
+        <Grid Margin="14,106,0,108"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Stretch"
+              Width="300">
+            <Border x:Name="border1"
+                    Background="#454545"
+                    CornerRadius="5"
+                    BorderBrush="#FF31FF00"
+                    BorderThickness="0,3,0,3">
+                <Border.RenderTransform>
+                    <TranslateTransform X="-330"/>
+                </Border.RenderTransform>
+            </Border>
+        </Grid>
+
+
+
+        <Grid VerticalAlignment="Stretch"
+              HorizontalAlignment="Stretch"
+              Margin="322,106,14,108">
+
+            <Grid VerticalAlignment="Top"
+                  HorizontalAlignment="Stretch"
+                  Height="100">
+                <Border x:Name="border9"
+                        Background="#454545"
+                        CornerRadius="5"
+                        BorderBrush="#FF31FF00"
+                        BorderThickness="3,0">
+                    <Border.RenderTransform>
+                        <TranslateTransform X="{Binding ActualWidth, ElementName=StatisticMainGrid}"/>
+                    </Border.RenderTransform>
+                </Border>
+            </Grid>
+
+            <Grid VerticalAlignment="Stretch"
+                  Margin="0,108,0,0">
+
+                <Grid VerticalAlignment="Stretch"
+                      HorizontalAlignment="Right"
+                      Width="300">
+                    <Border x:Name="border8"
+                            Background="#454545"
+                            CornerRadius="5"
+                            BorderBrush="#FF31FF00"
+                            BorderThickness="0,3">
+                        <Border.RenderTransform>
+                            <TranslateTransform X="400"/>
+                        </Border.RenderTransform>
+                    </Border>
+                </Grid>
+
+                <Grid Margin="0,0,308,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Border x:Name="border5"
+                            Background="#454545"
+                            CornerRadius="5"
+                            Margin="0,0,6,4"
+                            BorderBrush="#FF31FF00"
+                            BorderThickness="0,3,0,0">
+                        <Border.RenderTransform>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=StatisticMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
+                        </Border.RenderTransform>
+                    </Border>
+
+                    <Border x:Name="border6"
+                            Background="#454545"
+                            CornerRadius="5"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Margin="3,0,3,4"
+                            BorderBrush="#FF31FF00"
+                            BorderThickness="0,3,0,0">
+                        <Border.RenderTransform>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=StatisticMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
+                        </Border.RenderTransform>
+                    </Border>
+
+                    <Border x:Name="border7"
+                            Background="#454545"
+                            CornerRadius="5"
+                            Grid.Column="2"
+                            Margin="6,0,0,4"
+                            BorderBrush="#FF31FF00"
+                            BorderThickness="0,3,0,0">
+                        <Border.RenderTransform>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=StatisticMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
+                        </Border.RenderTransform>
+                    </Border>
+
+                    <Border x:Name="border2"
+                            Background="#454545"
+                            CornerRadius="5"
+                            Margin="0,4,6,0"
+                            Grid.Row="1"
+                            BorderBrush="#FF31FF00"
+                            BorderThickness="0,3,0,0">
+                        <Border.RenderTransform>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=StatisticMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
+                        </Border.RenderTransform>
+                    </Border>
+
+                    <Border x:Name="border3"
+                            Background="#454545"
+                            CornerRadius="5"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Margin="3,4,3,0"
+                            BorderBrush="#FF31FF00"
+                            BorderThickness="0,3,0,0">
+                        <Border.RenderTransform>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=StatisticMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
+                        </Border.RenderTransform>
+                    </Border>
+
+                    <Border x:Name="border4"
+                            Background="#454545"
+                            CornerRadius="5"
+                            Grid.Column="2"
+                            Margin="6,4,0,0"
+                            Grid.Row="1"
+                            BorderBrush="#FF31FF00"
+                            BorderThickness="0,3,0,0">
+                        <Border.RenderTransform>
+                            <TranslateTransform Y="{Binding ActualHeight, ElementName=StatisticMainGrid, 
+                                Converter={StaticResource PositiveToNegativeConverter}, Mode=OneWay}"/>
+                        </Border.RenderTransform>
+                    </Border>
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>
